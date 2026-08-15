@@ -18,8 +18,9 @@ export const caseStudies: CaseStudy[] = [
     approach:
       "Built BOS as one internal platform covering: daily task-setting and tracking with clear accountability (who reports to whom), attendance and clock-in, one-click reporting across any employee, subsidiary, system, project, or task, team chat and collaboration, and a personal layer for the founder's own learning tracking and finance management.",
     outcome:
-      "Every subsidiary now runs through one platform — currently 7 people (4 core team members, 1 apprentice, and 2 running Beyond Tech subsidiary projects) do their daily work through it. Every task carries a visible status and owner, and work requires evidence, closing the gap that used to let output go unnoticed. Financial and inventory reporting across every subsidiary and asset now takes one click, replacing what used to be a manual, back-and-forth request.",
+      "Every subsidiary now runs through one platform, live and in daily use for close to two months. Currently 7 people (4 core team members, 1 apprentice, and 2 running Beyond Tech subsidiary projects) do their daily work through it. Every task carries a visible status and owner, and work requires evidence, closing the gap that used to let output go unnoticed. Financial and inventory reporting across every subsidiary and asset now takes one click, replacing what used to be a manual, back-and-forth request.",
     metrics: [
+      { label: "in daily use across every subsidiary", value: "~2 months" },
       { label: "team members & subsidiary collaborators running daily work through BOS", value: "7" },
       { label: "financial, inventory & asset reporting turnaround", value: "1 click" },
     ],
