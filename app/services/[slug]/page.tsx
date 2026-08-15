@@ -44,7 +44,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         <Link href="/services" className="text-sm font-semibold text-primary hover:underline">
           ← All services
         </Link>
-        <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        <h1 className="mt-6 text-balance font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {service.title}
         </h1>
         <p className="mt-4 text-balance text-lg text-muted">{service.summary}</p>

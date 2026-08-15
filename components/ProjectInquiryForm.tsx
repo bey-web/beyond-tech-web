@@ -18,7 +18,7 @@ export default function ProjectInquiryForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-lg border border-border bg-surface p-8 text-center">
+      <div className="rounded-2xl border border-border bg-surface p-8 text-center shadow-card">
         <p className="text-ink">
           Thanks — form submission isn&apos;t connected yet, so this inquiry
           wasn&apos;t saved. Please reach out by email or WhatsApp for now.
@@ -39,7 +39,7 @@ export default function ProjectInquiryForm() {
             name="name"
             required
             type="text"
-            className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           />
         </div>
         <div>
@@ -50,7 +50,7 @@ export default function ProjectInquiryForm() {
             id="company"
             name="company"
             type="text"
-            className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           />
         </div>
         <div>
@@ -62,7 +62,7 @@ export default function ProjectInquiryForm() {
             name="email"
             required
             type="email"
-            className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           />
         </div>
         <div>
@@ -73,7 +73,7 @@ export default function ProjectInquiryForm() {
             id="phone"
             name="phone"
             type="tel"
-            className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           />
         </div>
         <div>
@@ -83,7 +83,7 @@ export default function ProjectInquiryForm() {
           <select
             id="project_type"
             name="project_type"
-            className="mt-2 w-full rounded-md border border-border bg-paper px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border bg-paper px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           >
             <option value="">Select one</option>
             {services.map((s) => (
@@ -103,7 +103,7 @@ export default function ProjectInquiryForm() {
             name="budget_range"
             type="text"
             placeholder="e.g. 3M–8M XAF"
-            className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           />
         </div>
         <div className="sm:col-span-2">
@@ -115,7 +115,7 @@ export default function ProjectInquiryForm() {
             name="timeline"
             type="text"
             placeholder="e.g. Launch in Q1"
-            className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+            className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
           />
         </div>
       </div>
@@ -129,13 +129,13 @@ export default function ProjectInquiryForm() {
           name="description"
           required
           rows={5}
-          className="mt-2 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          className="mt-2 w-full rounded-xl border border-border px-3.5 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
         />
       </div>
 
       <button
         type="submit"
-        className="rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-700"
+        className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-glow-primary transition-all hover:-translate-y-0.5 hover:bg-primary-700"
       >
         Send inquiry
       </button>

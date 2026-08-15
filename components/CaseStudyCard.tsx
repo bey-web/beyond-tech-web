@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/types";
+import GradientArt from "@/components/visuals/GradientArt";
 
 const SERVICE_LABELS: Record<CaseStudy["service_type"], string> = {
   business_technology: "Business Technology",
@@ -13,20 +14,21 @@ export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <Link
       href={`/work/${caseStudy.slug}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-paper transition-shadow hover:shadow-lg"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-paper shadow-card transition-all hover:-translate-y-1 hover:shadow-card-hover"
     >
-      <div className="aspect-[16/9] w-full overflow-hidden bg-surface">
+      <div className="aspect-[16/10] w-full overflow-hidden">
         {caseStudy.image_urls[0] ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={caseStudy.image_urls[0]}
             alt={caseStudy.title}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-sm text-muted">
-            {caseStudy.title}
-          </div>
+          <GradientArt
+            seed={caseStudy.slug}
+            className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+          />
         )}
       </div>
 
@@ -34,7 +36,7 @@ export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
         <span className="text-xs font-semibold uppercase tracking-wide text-accent-600">
           {SERVICE_LABELS[caseStudy.service_type]}
         </span>
-        <h3 className="text-lg font-semibold text-ink">{caseStudy.title}</h3>
+        <h3 className="font-display text-lg font-semibold text-ink">{caseStudy.title}</h3>
         <p className="line-clamp-2 text-sm text-muted">{caseStudy.outcome}</p>
 
         {headlineMetric && (

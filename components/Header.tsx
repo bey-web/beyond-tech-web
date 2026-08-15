@@ -14,10 +14,15 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-paper/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-paper/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
-          Beyond Tech
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-primary-600 to-ink shadow-glow-primary">
+            <span className="h-2 w-2 rounded-full bg-accent" />
+          </span>
+          <span className="font-display text-lg font-semibold tracking-tight text-ink">
+            Beyond Tech
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -32,7 +37,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-700"
+            className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-glow-primary transition-all hover:bg-primary-700 hover:shadow-glow"
           >
             Tell us what you&apos;re building
           </Link>
@@ -69,7 +74,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="rounded-md bg-primary px-4 py-2 text-center text-sm font-semibold text-white"
+              className="rounded-full bg-primary px-4 py-2 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Tell us what you&apos;re building

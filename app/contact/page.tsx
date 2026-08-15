@@ -16,7 +16,7 @@ export default function ContactPage() {
     <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
       <div className="grid gap-16 lg:grid-cols-[1.2fr,1fr]">
         <div>
-          <h1 className="text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+          <h1 className="text-balance font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
             Tell us what you&apos;re building.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted">
@@ -31,13 +31,13 @@ export default function ContactPage() {
 
         <aside className="space-y-6">
           {responseCommitment && (
-            <div className="rounded-lg border border-border bg-surface p-6">
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-card">
               <p className="text-sm text-ink">{responseCommitment}</p>
             </div>
           )}
 
           {inquiryEmail && (
-            <div className="rounded-lg border border-border p-6">
+            <div className="rounded-2xl border border-border p-6 shadow-card">
               <div className="text-sm font-semibold text-ink">Email</div>
               <a
                 href={`mailto:${inquiryEmail}`}
@@ -53,7 +53,7 @@ export default function ContactPage() {
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-lg border border-border p-6 transition-shadow hover:shadow-md"
+              className="block rounded-2xl border border-border p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
               <div className="text-sm font-semibold text-ink">WhatsApp</div>
               <p className="mt-1 text-sm text-muted">Chat with us directly →</p>
@@ -65,7 +65,7 @@ export default function ContactPage() {
               href={calLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-lg border border-border p-6 transition-shadow hover:shadow-md"
+              className="block rounded-2xl border border-border p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
               <div className="text-sm font-semibold text-ink">Book a call</div>
               <p className="mt-1 text-sm text-muted">Schedule a discovery call →</p>

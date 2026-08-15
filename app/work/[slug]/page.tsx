@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import CTABand from "@/components/CTABand";
+import GradientArt from "@/components/visuals/GradientArt";
 import { getCaseStudyBySlug, getCaseStudies } from "@/lib/content/case-studies";
 
 export function generateStaticParams() {
@@ -23,16 +24,35 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
   return (
     <>
-      <section className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <div className="relative aspect-[21/9] w-full overflow-hidden">
+        {caseStudy.image_urls[0] ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={caseStudy.image_urls[0]}
+            alt={caseStudy.title}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <GradientArt seed={caseStudy.slug} className="h-full w-full" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
+      </div>
+
+      <section className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
         <Link href="/work" className="text-sm font-semibold text-primary hover:underline">
           ← All work
         </Link>
-        <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        <h1 className="mt-6 text-balance font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {caseStudy.title}
         </h1>
+        {caseStudy.industry && (
+          <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-accent-600">
+            {caseStudy.industry}
+          </p>
+        )}
 
         {caseStudy.metrics.length > 0 && (
-          <div className="mt-10 grid grid-cols-2 gap-6 rounded-lg border border-border bg-surface p-6 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-6 rounded-2xl border border-border bg-surface p-6 shadow-card sm:grid-cols-3">
             {caseStudy.metrics.map((metric) => (
               <div key={metric.label}>
                 <div className="text-2xl font-bold text-primary">{metric.value}</div>
