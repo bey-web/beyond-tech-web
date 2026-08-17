@@ -4,18 +4,14 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import TestimonialBlock from "@/components/TestimonialBlock";
 import CTABand from "@/components/CTABand";
 import ProcessStepper from "@/components/ProcessStepper";
+import StatBand from "@/components/StatBand";
 import Reveal from "@/components/visuals/Reveal";
 import FloatingCard from "@/components/visuals/FloatingCard";
 import { getCaseStudies } from "@/lib/content/case-studies";
 import { getTestimonials } from "@/lib/content/testimonials";
 import { getServices } from "@/lib/content/services";
 import { process } from "@/lib/content/process";
-
-const SERVICE_ICONS: Record<string, string> = {
-  business_technology: "M4 19h16M6 15l3-6 4 4 5-9",
-  digital_presence: "M12 4v16m8-8H4",
-  technology_partnership: "M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z",
-};
+import { SERVICE_ICONS } from "@/lib/content/icons";
 
 export default function HomePage() {
   const caseStudies = getCaseStudies().slice(0, 3);
@@ -106,13 +102,7 @@ export default function HomePage() {
 
       <ProofStrip />
 
-      <section className="relative overflow-hidden bg-ink py-14">
-        <div className="absolute inset-0 bg-grid-pattern bg-[size:48px_48px] opacity-40" />
-        <p className="relative mx-auto max-w-3xl text-balance px-6 text-center font-display text-lg font-medium text-white sm:text-xl">
-          Built for African infrastructure realities. Delivered to a global
-          standard.
-        </p>
-      </section>
+      <StatBand />
 
       {caseStudies.length > 0 && (
         <section className="mx-auto max-w-6xl px-6 py-24">
